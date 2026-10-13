@@ -1,33 +1,63 @@
-# The Unchanging Lane
+const timelineGrid = document.getElementById('timelineGrid');
 
-A cinematic sci-fi production bible and AI video prompt package for a 30-minute film sequence.
+function getToneClass(styleName = '') {
+  const value = styleName.toLowerCase();
+  if (value.includes('cyan')) return 'card-cyan';
+  if (value.includes('amber') || value.includes('warm')) return 'card-amber';
+  if (value.includes('gold') || value.includes('finale')) return 'card-gold';
+  return 'card-cyan';
+}
 
-## Overview
-This project tracks the complete story arc and shot plan for The Unchanging Lane, a 30:00 AI-assisted film built around a cyan-to-amber world transformation, a human-community migration, and a final planetary web of living light.
+async function initTimeline() {
+  try {
+    const response = await fetch('timeline.json');
+    const data = await response.json();
 
-## Repository Contents
-- `AI_VIDEO_PRODUCTION_BIBLE.md` — complete timeline, prompts, edits, and production notes
-- `timeline.csv` — machine-readable timeline export
-- `timeline.json` — structured metadata for pipeline or render tooling
-- `README.md` — high-level project overview and usage instructions
+    if (!data || !Array.isArray(data.clips)) {
+      throw new Error('Invalid timeline data');
+    }
 
-## Production Specs
-- Runtime: 30:00 (1800s)
-- Master Pulse: 0.8Hz rhythm (1.25s cycle, 8 cycles per 10s clip)
-- Delivery: 3840x2160 @ 24fps, anamorphic 2.39:1 framed in 16:9
-- Color: Raw AI Gen -> DaVinci Resolve grade via LUTs
+    renderTimeline(data.clips);
+  } catch (error) {
+    console.error('Failed to load timeline data:', error);
+    renderFallback();
+  }
+}
 
-## Global Style Block
-Cinematic sci-fi, anamorphic 2.39:1 look framed in 16:9, shallow depth of field, volumetric light, film grain, no text, no logos, no watermark.
+function renderTimeline(clips) {
+  timelineGrid.innerHTML = clips
+    .map((clip) => {
+      const tone = getToneClass(clip.style || '');
+      const time = `${clip.start_time || '00:00'} — ${clip.end_time || '00:00'}`;
+      const tag = clip.loop_count && clip.loop_count > 1 ? `Loop x${clip.loop_count}` : 'Single';
 
-## Character Block
-ELARA, woman, 28, dark shoulder-length hair, pale skin, wearing a dark utility jacket, a small glowing neural lace behind her left ear.
+      return `
+        <article class="timeline-card ${tone}">
+          <div class="card-header">
+            <h4>${clip.id}. ${clip.title}</h4>
+            <span class="card-chip">${tag}</span>
+          </div>
+          <div class="card-meta">${time}</div>
+          <div class="card-style">${clip.style || 'Cinematic'}</div>
+          <p class="card-notes">${clip.notes || 'Production note pending.'}</p>
+        </article>
+      `;
+    })
+    .join('');
+}
 
-## Global Negative Prompt
-text, subtitles, watermark, logo, cartoon, distorted hands, extra fingers, morphing faces, flicker artifacts, jump cuts.
+function renderFallback() {
+  timelineGrid.innerHTML = `
+    <article class="timeline-card card-gold">
+      <div class="card-header">
+        <h4>1. HUM</h4>
+        <span class="card-chip">Loop x9</span>
+      </div>
+      <div class="card-meta">00:00 — 01:30</div>
+      <div class="card-style">Sprawl_Cyan_Cool</div>
+      <p class="card-notes">A cyan megalopolis and the first view of ELARA in reflection.</p>
+    </article>
+  `;
+}
 
-## Use
-This repository serves as the source for AI prompt generation, editing notes, and continuity planning.
-
-## License
-This project is provided as a creative production artifact for internal or project-based use.
+initTimeline();

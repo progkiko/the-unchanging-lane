@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Unchanging Lane</title>
+    <meta
+      name="description"
+      content="The Unchanging Lane — a cinematic sci-fi AI film production bible and live demo timeline."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-glow cyan"></div>
+    <div class="background-glow amber"></div>
+
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand-mark">U</div>
+        <div>
+          <p class="eyebrow">AI VIDEO PRODUCTION</p>
+          <h1>The Unchanging Lane</h1>
+        </div>
+      </div>
+      <nav class="topnav">
+        <a href="#overview">Overview</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#specs">Specs</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="overview" class="hero">
+        <div class="hero-copy">
+          <p class="kicker">Cyan decay. Amber renewal. Golden transcendence.</p>
+          <h2>A 30-minute cinematic sci-fi story told in light, rhythm, and memory.</h2>
+          <p class="lead">
+            This live demo presents the production bible for a world where a dying machine-city gives way to an organic living web, and the people who bridge the gap become the next chapter of the planet itself.
+          </p>
+          <div class="cta-row">
+            <a class="button primary" href="#timeline">Explore timeline</a>
+            <a class="button secondary" href="AI_VIDEO_PRODUCTION_BIBLE.md">Read bible</a>
+          </div>
+        </div>
+
+        <aside class="stat-panel">
+          <div class="stat-box">
+            <span class="label">Runtime</span>
+            <strong id="runtimeDisplay">30:00</strong>
+          </div>
+          <div class="stat-box">
+            <span class="label">Master pulse</span>
+            <strong>0.8Hz</strong>
+          </div>
+          <div class="stat-box">
+            <span class="label">Delivery</span>
+            <strong>3840×2160</strong>
+          </div>
+          <div class="stat-box">
+            <span class="label">Framerate</span>
+            <strong>24fps</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section id="specs" class="spec-grid">
+        <div class="spec-card">
+          <p class="eyebrow">World Logic</p>
+          <h3>Cyan → Amber → Gold</h3>
+          <p>Decay, emergence, and spiritual anchoring are mapped to color, motion, and rhythm across the whole film.</p>
+        </div>
+        <div class="spec-card">
+          <p class="eyebrow">Production Rhythm</p>
+          <h3>1.25s cycle</h3>
+          <p>Environment motion and light pulses align to the master 0.8Hz rhythm for consistent cinematic breathing.</p>
+        </div>
+        <div class="spec-card">
+          <p class="eyebrow">Art Direction</p>
+          <h3>Living Web</h3>
+          <p>Textures, city collapse, and planetary restoration all reinforce a mycelium-like organic architecture of connection.</p>
+        </div>
+      </section>
+
+      <section id="timeline" class="timeline-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Timeline</p>
+            <h3>13 clips / 30 minute arc</h3>
+          </div>
+          <div class="legend">
+            <span><i class="dot cyan"></i> Cyan</span>
+            <span><i class="dot amber"></i> Amber</span>
+            <span><i class="dot gold"></i> Gold</span>
+          </div>
+        </div>
+
+        <div id="timelineGrid" class="timeline-grid"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
