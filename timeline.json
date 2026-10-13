@@ -1,0 +1,157 @@
+{
+  "project": "The Unchanging Lane",
+  "runtime_seconds": 1800,
+  "pulse_hz": 0.8,
+  "cycle_seconds": 1.25,
+  "resolution": "3840x2160",
+  "fps": 24,
+  "aspect_ratio": "2.39:1 framed in 16:9",
+  "global_style_block": "Cinematic sci-fi, anamorphic 2.39:1 look framed in 16:9, shallow depth of field, volumetric light, film grain, no text, no logos, no watermark.",
+  "character_block": "ELARA, woman, 28, dark shoulder-length hair, pale skin, wearing a dark utility jacket, a small glowing neural lace behind her left ear.",
+  "global_negative_prompt": "text, subtitles, watermark, logo, cartoon, distorted hands, extra fingers, morphing faces, flicker artifacts, jump cuts.",
+  "clips": [
+    {
+      "id": 1,
+      "title": "HUM",
+      "start_time": "00:00",
+      "end_time": "01:30",
+      "duration_seconds": 90,
+      "loop_count": 9,
+      "scale": "25%",
+      "style": "Sprawl_Cyan_Cool",
+      "notes": "Keep rain and hover-train motion continuous so first and last frames match."
+    },
+    {
+      "id": 2,
+      "title": "FRACTURE",
+      "start_time": "01:30",
+      "end_time": "04:00",
+      "duration_seconds": 150,
+      "loop_count": 4,
+      "scale": "100% / 50%",
+      "style": "Sprawl_Cyan to Amber_Shift",
+      "notes": "Add the DISCONNECT text in post."
+    },
+    {
+      "id": 3,
+      "title": "BREAK",
+      "start_time": "04:00",
+      "end_time": "07:30",
+      "duration_seconds": 210,
+      "loop_count": 1,
+      "scale": "50% glass + 100% pull",
+      "style": "Impact_Gold_Flash",
+      "notes": "Single non-looping take; cut to black on the pull (12f)."
+    },
+    {
+      "id": 4,
+      "title": "SILENCE",
+      "start_time": "07:30",
+      "end_time": "10:00",
+      "duration_seconds": 150,
+      "loop_count": 5,
+      "scale": "75%",
+      "style": "Weave_Amber_Emerge",
+      "notes": "Loop on the puddle ripple."
+    },
+    {
+      "id": 5,
+      "title": "TWO WORLDS",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "duration_seconds": 120,
+      "loop_count": 2,
+      "scale": "50%",
+      "style": "Split_Cyan_Amber",
+      "notes": "Generate left and right halves separately and composite."
+    },
+    {
+      "id": 6,
+      "title": "MYSTERIES",
+      "start_time": "12:00",
+      "end_time": "15:00",
+      "duration_seconds": 180,
+      "loop_count": 6,
+      "scale": "75%",
+      "style": "Weave_Warm_Amber",
+      "notes": "Three beats; generate separately and chain."
+    },
+    {
+      "id": 7,
+      "title": "FRAYING",
+      "start_time": "15:00",
+      "end_time": "17:00",
+      "duration_seconds": 120,
+      "loop_count": 3,
+      "scale": "120%",
+      "style": "Desat_Cyan_Break",
+      "notes": "SYSTEM DRIFT UNPRECEDENTED in post."
+    },
+    {
+      "id": 8,
+      "title": "EXODUS + ANCHORING",
+      "start_time": "17:00",
+      "end_time": "20:00",
+      "duration_seconds": 180,
+      "loop_count": 8,
+      "scale": "60% / 80% / 30%",
+      "style": "Golden_Hour_Weave to Anchor_Gold_Pure",
+      "notes": "Generate Exodus then Anchoring and chain them."
+    },
+    {
+      "id": 9,
+      "title": "TEACHING",
+      "start_time": "20:00",
+      "end_time": "22:30",
+      "duration_seconds": 150,
+      "loop_count": 6,
+      "scale": "75%",
+      "style": "Weave_Warm_Amber",
+      "notes": "Loop on amber pulse; match to 0.8Hz."
+    },
+    {
+      "id": 10,
+      "title": "PASSING",
+      "start_time": "22:30",
+      "end_time": "25:00",
+      "duration_seconds": 150,
+      "loop_count": 2,
+      "scale": "40%",
+      "style": "Sunrise_Amber_Soft",
+      "notes": "Particle dissolve over 48f."
+    },
+    {
+      "id": 11,
+      "title": "MESSENGERS",
+      "start_time": "25:00",
+      "end_time": "27:30",
+      "duration_seconds": 150,
+      "loop_count": 5,
+      "scale": "100%",
+      "style": "Vessel_Trail_Gold",
+      "notes": "Cut inside to children aboard, awake, looking at the stars."
+    },
+    {
+      "id": 12,
+      "title": "FINALE",
+      "start_time": "27:30",
+      "end_time": "30:00",
+      "duration_seconds": 150,
+      "loop_count": 1,
+      "scale": "30%",
+      "style": "Finale_Gold_Web",
+      "notes": "Fade to gold 72f, hold 3s, fade to black."
+    },
+    {
+      "id": 13,
+      "title": "THE SANCTUARY (TROY'S BRIDGE)",
+      "start_time": "11:30",
+      "end_time": "12:30",
+      "duration_seconds": 60,
+      "loop_count": 4,
+      "scale": "50%",
+      "style": "Split_Cyan_Amber to Weave_Warm_Amber",
+      "notes": "Loop on amber pulse of moss and breathing cadence; 0.8Hz / 1.25s."
+    }
+  ]
+}
